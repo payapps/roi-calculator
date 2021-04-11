@@ -1,0 +1,20 @@
+.roi-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  width: 100%;
+  max-width: 888px;
+  margin: 0px auto;
+  font-size: 16px;
+}
+
+.roi-heading {
+  margin-bottom: 50px;
+  
+  h1 {
+    font-size: 38px;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+  }
+}

@@ -1,0 +1,10 @@
+.roi-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 115px;
+
+  .logo {
+    pointer-events: none;
+  }
+}

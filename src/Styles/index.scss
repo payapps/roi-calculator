@@ -1,0 +1,21 @@
+@import './normalize.scss';
+@import './reset.scss';
+@import './Components/app.scss';
+@import './Components/header.scss';
+@import './Components/calculator.scss';
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #13242E;
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.link {
+  color: #61dafb;
+}
