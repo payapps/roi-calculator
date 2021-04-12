@@ -7,7 +7,11 @@ const customStyles = {
   }),
   menu: () => ({
     background: '#13242E',
-    width: '200px'
+    width: '200px',
+    zIndex: '2',
+    display: 'flex',
+    flexDirection: 'column',
+    position: 'absolute'
   }),
   control: () => ({
     // none of react-select's styles are passed to <Control />
@@ -26,6 +30,7 @@ const customStyles = {
       color: '#ffffff',
       height: '42px',
       alignItems: 'center',
+      zIndex: '0'
     }
   },
   indicatorSeparator: () => ({

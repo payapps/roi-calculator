@@ -1,21 +1,13 @@
 import React from 'react'
-import { logo } from '../../svgIcons'
 
 const Header = () => {
   return (
-    <section className='roi-header'>
-      <a
-        className="link"
-        href="https://www.payapps.com"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <div className="logo">
-          {logo}
-        </div>
-      </a>
-
-    </section>
+    <header className="roi-heading">
+      <h1>R.O.I. CALCULATOR</h1>
+      <p>
+        See how much time and money you could be saving with Payapps.
+        </p>
+    </header>
   );
 }
 

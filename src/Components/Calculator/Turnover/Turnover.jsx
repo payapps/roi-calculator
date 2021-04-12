@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Select from 'react-select'
 import { customStyles } from '../../../Styles/dropdownStyles'
 
-const Turnover = ({ setTurnover }) => {
-  const options = [
+const Turnover = ({ setTurnover, isForUK }) => {
+  const options = !isForUK ? [
     {
       label: 'Tier 5 (< $10m)',
       value: 21000
@@ -24,12 +24,20 @@ const Turnover = ({ setTurnover }) => {
       label: 'Tier 1 ($1.5b +)',
       value: 126000
     },
+  ] : [
+    {
+      label: 'Tier 3 (£30-£249m)',
+      value: 12000
+    },
+    {
+      label: 'Tier 2 (£250m - £499m)',
+      value: 30000
+    },
+    {
+      label: 'Tier 1 (£500m +)',
+      value: 60000
+    },
   ]
-
-  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  console.log('timezone', timezone)
-
-  // const [value, setValue] = useState('')
 
   return (
     <div className='roi-calculator__turnover'>

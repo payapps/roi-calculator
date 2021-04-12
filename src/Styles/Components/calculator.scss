@@ -1,10 +1,22 @@
 .roi-calculator {
+  width: 100%;
+  
   .row {
     display: flex;
     background: rgba(255, 255, 255, 0.05);
     font-size: 16px;
     margin-bottom: 2px;
     height: 42px;
+  }
+
+  .overlay {
+    display: flex;
+    width: 100%;
+    max-width: 888px;
+    position: absolute;
+    height: inherit;
+    background: rgba($color: #13242E, $alpha: 0.8);
+    z-index: 1;
   }
 
   .text {
@@ -46,15 +58,12 @@
       text-align: right;
     }
 
-    &.roi-calculator__minutes {
-      padding-left: 0;
-      width: 30px;
-    }
-
+    &.roi-calculator__minutes,
     &.roi-calculator__wage {
       padding-left: 0;
     }
 
+    //needed if currency symbol is to be displayed in the input field
     // &.roi-calculator__archival-cost {
     //   padding-left: 0;
     // }
