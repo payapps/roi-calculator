@@ -2,8 +2,8 @@ import React from 'react'
 import Select from 'react-select'
 import { customStyles } from '../../../Styles/dropdownStyles'
 
-const Turnover = ({ setTurnover, isForUK }) => {
-  const options = !isForUK ? [
+const Turnover = ({ setTurnover, isUnitedKingdom }) => {
+  const options = !isUnitedKingdom ? [
     {
       label: 'Tier 5 (< $10m)',
       value: 21000

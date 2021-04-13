@@ -6,25 +6,26 @@ import HourlyRate from './HourlyRate/HourlyRate'
 import PhysicalPayments from './PhysicalPayments/PhysicalPayments'
 import Results from './Results/Results'
 
-const Calculator = ({ isForUK }) => {
+const Calculator = ({ isUnitedKingdom }) => {
   const [turnover, setTurnover] = useState({ label: 'none', value: 0 })
-  console.log('turnover', turnover)
   const [numOfClaims, setNumOfClaims] = useState(200)
   const [assessmentTime, setAssessmentTime] = useState(2)
-  const [hourRate, setHourlyRate] = useState(isForUK ? 28 : 75)
+  const [hourRate, setHourlyRate] = useState(isUnitedKingdom ? 28 : 75)
   const [numOfPages, setNumOfPages] = useState(0)
+  const [hasPhysicalPayments, setPhysicalPayments] = useState(false)
   const [archivalCost, setArchivalCost] = useState(0)
   const isTierSelected = turnover.value !== 0
 
   //Payapps Defaults
   const payappsProcessingTime = 45 / 60 //45 minutes
-  const payappsDefaultRate = isForUK ? 28 : 75 //dollars per hour
+  const payappsDefaultRate = isUnitedKingdom ? 28 : 75 //dollars per hour
   const payappsTotalPerClaimCost = payappsDefaultRate * payappsProcessingTime
   const payappsTotalAnnualCostToProcessClaims = payappsTotalPerClaimCost * numOfClaims * 12
 
   //Calculate Money Savings
   const totalPerClaimCost = hourRate * assessmentTime
-  const totalAnnualCostToProcessClaims = (totalPerClaimCost * numOfClaims * 12) + ((numOfPages * 0.05 * 13) + (archivalCost * 12))
+  const physicalCosts = hasPhysicalPayments.value ? ((numOfPages * 0.05 * 12) + (archivalCost * 12)) : 0
+  const totalAnnualCostToProcessClaims = (totalPerClaimCost * numOfClaims * 12) + physicalCosts
   const moneySavedAnnually = totalAnnualCostToProcessClaims - payappsTotalAnnualCostToProcessClaims
 
   //Calculate Time Savings
@@ -41,27 +42,27 @@ const Calculator = ({ isForUK }) => {
       // Allow: home, end, left, right
       (e.keyCode >= 35 && e.keyCode <= 39)) {
       // let it happen, don't do anything
-      return;
+      return
     }
     // Ensure that it is a number and stop the keypress
     if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
-      e.preventDefault();
+      e.preventDefault()
     }
   }
 
   return (
     <section className='roi-calculator'>
-      <Turnover setTurnover={setTurnover} isForUK={isForUK} />
+      <Turnover setTurnover={setTurnover} isUnitedKingdom={isUnitedKingdom} />
 
       <ClaimsNumber setNumOfClaims={setNumOfClaims} isTierSelected={isTierSelected} restrictLetterInput={restrictLetterInput} />
 
       <AssessmentTime setAssessmentTime={setAssessmentTime} isTierSelected={isTierSelected} restrictLetterInput={restrictLetterInput} />
 
-      <HourlyRate setHourlyRate={setHourlyRate} isTierSelected={isTierSelected} isForUK={isForUK} restrictLetterInput={restrictLetterInput} />
+      <HourlyRate setHourlyRate={setHourlyRate} isTierSelected={isTierSelected} isUnitedKingdom={isUnitedKingdom} restrictLetterInput={restrictLetterInput} />
 
-      {isForUK ? null : <PhysicalPayments setNumOfPages={setNumOfPages} setArchivalCost={setArchivalCost} isTierSelected={isTierSelected} restrictLetterInput={restrictLetterInput} />}
+      {isUnitedKingdom ? null : <PhysicalPayments setNumOfPages={setNumOfPages} setArchivalCost={setArchivalCost} isTierSelected={isTierSelected} restrictLetterInput={restrictLetterInput} hasPhysicalPayments={hasPhysicalPayments} setPhysicalPayments={setPhysicalPayments} />}
 
-      <Results moneySavedAnnually={moneySavedAnnually} timeSaved={timeSaved} returnOnInvestment={returnOnInvestment} isForUK={isForUK} />
+      <Results moneySavedAnnually={moneySavedAnnually} timeSaved={timeSaved} returnOnInvestment={returnOnInvestment} isUnitedKingdom={isUnitedKingdom} isTierSelected={isTierSelected} />
 
     </section>
   )

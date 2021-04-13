@@ -2,9 +2,7 @@ import React, { useState } from 'react'
 import Select from 'react-select'
 import { customStyles } from '../../../Styles/dropdownStyles'
 
-const PhysicalPayments = ({ setNumOfPages, setArchivalCost, isTierSelected, restrictLetterInput }) => {
-  const [hasPhysicalPayments, setPhysicalPayments] = useState(false)
-
+const PhysicalPayments = ({ setNumOfPages, setArchivalCost, isTierSelected, restrictLetterInput, hasPhysicalPayments, setPhysicalPayments }) => {
   const options = [
     {
       label: 'no',
