@@ -18,7 +18,7 @@ const AssessmentTime = ({ setAssessmentTime, isTierSelected, restrictLetterInput
   return (
     <div className='row'>
       {overlay}
-      <div className='text'>
+      <div className='text' title='Total time to assess a claim?'>
         Total time to assess a claim?
       </div>
       <div className='col1 roi-calculator__time-wrapper'>

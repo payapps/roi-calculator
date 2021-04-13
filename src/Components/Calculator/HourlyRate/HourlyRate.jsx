@@ -6,7 +6,7 @@ const HourlyRate = ({ setHourlyRate, isTierSelected, isUnitedKingdom, restrictLe
   return (
     <div className='row'>
       {overlay}
-      <div className='text'>
+      <div className='text' title='Average Contract Administrator hourly wage (f you’re unsure, use 75)'>
         Average Contract Administrator hourly wage <span className='small-text'>(if you’re unsure, use {isUnitedKingdom ? '£28' : '$75'} per hour)</span>
       </div>
       <div className='col1 roi-calculator__wage-input-wrapper'>

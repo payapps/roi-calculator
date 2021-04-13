@@ -6,7 +6,7 @@ const ClaimsNumber = ({ setNumOfClaims, isTierSelected, restrictLetterInput }) =
   return (
     <div className='row'>
       {overlay}
-      <div className='text'>
+      <div className='text' title='Claims processed per month?'>
         Claims processed per month?
           </div>
       <div className='col1'>

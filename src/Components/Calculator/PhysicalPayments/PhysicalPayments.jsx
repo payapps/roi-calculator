@@ -20,7 +20,7 @@ const PhysicalPayments = ({ setNumOfPages, setArchivalCost, isTierSelected, rest
     <div className="roi-calculator__physical-payments">
       <div className='row'>
         {isTierSelected ? null : <div className='overlay'></div>}
-        <div className='text'>
+        <div className='text' title='Do you mail physical payment schedules?'>
           Do you mail physical payment schedules?
         </div>
 
@@ -44,7 +44,7 @@ const PhysicalPayments = ({ setNumOfPages, setArchivalCost, isTierSelected, rest
       <div className='row'>
         {overlay}
 
-        <div className='text'>
+        <div className='text' title='Average number of pages printed per claim'>
           Average number of pages printed per claim
         </div>
         <div className='col1'>
@@ -57,7 +57,7 @@ const PhysicalPayments = ({ setNumOfPages, setArchivalCost, isTierSelected, rest
 
       <div className='row'>
         {overlay}
-        <div className='text'>
+        <div className='text' title='Courier and archival costs'>
           Courier and archival costs
         </div>
         <div className='col1 roi-calculator__archival-input-wrapper'>

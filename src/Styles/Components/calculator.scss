@@ -1,6 +1,6 @@
 .roi-calculator {
   width: 100%;
-  
+
   .row {
     display: flex;
     background: rgba(255, 255, 255, 0.05);
@@ -16,13 +16,16 @@
     max-width: 888px;
     position: absolute;
     height: 100%;
-    background: rgba($color: #13242E, $alpha: 0.8);
+    background: rgba($color: #13242e, $alpha: 0.8);
     z-index: 1;
   }
 
   .text {
     padding: 12px 16px;
-    flex-grow: 1;
+    flex: 1;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 
   .small-text {
@@ -30,11 +33,13 @@
   }
 
   .col1 {
-    width: 200px;
+    // width: 200px;
+    flex: 0 0 200px;
   }
 
   .col2 {
-    width: 105px;
+    // width: 105px;
+    flex: 0 0 105px;
   }
 
   .col1 {
@@ -138,5 +143,42 @@
   .roi-calculator__results__units {
     font-weight: 200;
     font-size: 36px;
+  }
+}
+
+@media screen and (max-width: 888px) {
+  .roi-calculator {
+    .text {
+      padding: 12px;
+    }
+
+    .roi-calculator__results {
+      padding: 0 12px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .roi-calculator {
+    .text {
+      padding: 12px;
+    }
+
+    .roi-calculator__results {
+      padding: 0 12px;
+      flex-direction: column;
+      margin: 50px 0 44px;
+    }
+
+    .roi-calculator__results__return-on-investment {
+      flex: 1;
+      margin-bottom: 24px;
+      border: 0;
+      padding: 0;
+    }
+
+    .roi-calculator__results__savings {
+      padding-left: 0;
+    }
   }
 }

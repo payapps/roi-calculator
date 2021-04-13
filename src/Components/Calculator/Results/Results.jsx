@@ -3,6 +3,8 @@ import React from 'react'
 const Results = ({ moneySavedAnnually, timeSaved, returnOnInvestment, isUnitedKingdom, isTierSelected }) => {
   const overlay = !isTierSelected ? <div className='overlay'></div> : null
 
+  const formattedMoneySavedAnnually = moneySavedAnnually.toLocaleString("en-AU", { maximumFractionDigits: 2, minimumFractionDigits: 2 });
+
   return (
     <section className='roi-calculator__results'>
       <div className='roi-calculator__results__return-on-investment'>
@@ -18,10 +20,10 @@ const Results = ({ moneySavedAnnually, timeSaved, returnOnInvestment, isUnitedKi
 
       <div className='roi-calculator__results__savings'>
         <p>With Payapps, you could save</p>
-        {overlay}
         <div className='roi-calculator__results__result-container'>
+          {overlay}
           <p>
-            <span className='roi-calculator__results__number'>{isUnitedKingdom ? '£' : '$'}{moneySavedAnnually.toFixed(2)}</span>
+            <span className='roi-calculator__results__number'>{isUnitedKingdom ? '£' : '$'}{formattedMoneySavedAnnually}</span>
             <span className='roi-calculator__results__units'> pa</span>
           </p>
           <p>or</p>

@@ -22,3 +22,15 @@
     margin-bottom: 24px;
   }
 }
+
+@media screen and (max-width: 888px) {
+  .roi-heading {
+    padding: 115px 12px 0;
+  }
+}
+
+@media screen and (max-width: 678px) {
+  .roi-heading {
+    padding: 44px 12px 0;
+  }
+}
