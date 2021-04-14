@@ -105,8 +105,9 @@
   }
 
   .roi-calculator__results {
-    margin: 100px 0 88px;
+    margin: 0 0 88px;
     display: flex;
+    padding-top: 100px;
 
     p {
       margin-bottom: 16px;
@@ -153,7 +154,7 @@
     }
 
     .roi-calculator__results {
-      padding: 0 12px;
+      padding: 100px 12px 0;
     }
   }
 }
@@ -164,10 +165,14 @@
       padding: 12px;
     }
 
+    .overlay {
+      min-height: 84px;
+    }
+
     .roi-calculator__results {
-      padding: 0 12px;
       flex-direction: column;
-      margin: 50px 0 44px;
+      margin: 0 0 44px;
+      padding: 50px 12px 0;
     }
 
     .roi-calculator__results__return-on-investment {
@@ -179,6 +184,32 @@
 
     .roi-calculator__results__savings {
       padding-left: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 666px) {
+  .roi-calculator {
+    .row {
+      flex-wrap: wrap;
+      margin-bottom: 54px;
+    }
+
+    .text {
+      flex: 1 1 100%;
+    }
+
+    .col1 {
+      // flex: 1 0 200px;
+      height: 42px;
+    }
+
+    .col2 {
+      height: 42px;
+    }
+
+    .roi-calculator__turnover {
+      margin-bottom: 74px;
     }
   }
 }
