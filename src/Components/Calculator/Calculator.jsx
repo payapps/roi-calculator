@@ -16,6 +16,8 @@ const Calculator = ({ isUnitedKingdom }) => {
   const [archivalCost, setArchivalCost] = useState(0)
   const isTierSelected = turnover.value !== 0
 
+  const checkZeroInputValues = numOfClaims < 1 || assessmentTime < 0.01 || hourRate < 0.01 || numOfClaims === '' || assessmentTime === '' || hourRate === ''
+
   //Payapps Defaults
   const payappsProcessingTime = 45 / 60 //45 minutes
   const payappsDefaultRate = isUnitedKingdom ? 28 : 75 //dollars per hour
@@ -26,13 +28,13 @@ const Calculator = ({ isUnitedKingdom }) => {
   const totalPerClaimCost = hourRate * assessmentTime
   const physicalCosts = hasPhysicalPayments.value ? ((numOfPages * 0.05 * 12) + (archivalCost * 12)) : 0
   const totalAnnualCostToProcessClaims = (totalPerClaimCost * numOfClaims * 12) + physicalCosts
-  const moneySavedAnnually = totalAnnualCostToProcessClaims - payappsTotalAnnualCostToProcessClaims - turnover.value
+  const moneySavedAnnually = checkZeroInputValues ? 0 : totalAnnualCostToProcessClaims - payappsTotalAnnualCostToProcessClaims - turnover.value
 
   //Calculate Time Savings
-  const timeSaved = (numOfClaims * assessmentTime) - (numOfClaims * payappsProcessingTime)
+  const timeSaved = checkZeroInputValues ? 0 : (numOfClaims * assessmentTime) - (numOfClaims * payappsProcessingTime)
 
   //Calculate Return On Investment
-  const returnOnInvestment = turnover.value / (moneySavedAnnually / 12)
+  const returnOnInvestment = checkZeroInputValues ? 0 : turnover.value / (moneySavedAnnually / 12)
 
   //restrict letters and characters
   const restrictLetterInput = (e) => {
