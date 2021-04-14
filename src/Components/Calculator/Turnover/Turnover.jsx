@@ -40,7 +40,7 @@ const Turnover = ({ setTurnover, isUnitedKingdom }) => {
   ]
 
   return (
-    <div className='roi-calculator__turnover'>
+    <div className='roi-calculator__turnover' data-testid='roi-calculator__turnover'>
       <div className='row'>
         <div className='text' title='Select annual turnover'>
           Select annual turnover

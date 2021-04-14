@@ -4,7 +4,7 @@ const HourlyRate = ({ setHourlyRate, isTierSelected, isUnitedKingdom, restrictLe
   const overlay = !isTierSelected ? <div className='overlay'></div> : null
 
   return (
-    <div className='row'>
+    <div className='row' data-testid='roi-hourly-rate'>
       {overlay}
       <div className='text' title='Average Contract Administrator hourly wage (f you’re unsure, use 75)'>
         Average Contract Administrator hourly wage <span className='small-text'>(if you’re unsure, use {isUnitedKingdom ? '£28' : '$75'} per hour)</span>

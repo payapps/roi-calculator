@@ -16,13 +16,13 @@ const AssessmentTime = ({ setAssessmentTime, isTierSelected, restrictLetterInput
   })
 
   return (
-    <div className='row'>
+    <div className='row' data-testid='roi-assessment-time'>
       {overlay}
       <div className='text' title='Total time to assess a claim?'>
         Total time to assess a claim?
       </div>
       <div className='col1 roi-calculator__time-wrapper'>
-        <input className='roi-calculator__hours' type='text' defaultValue={hoursValue} placeholder='0' onChange={(e) => setHoursValue(e.target.value)} onKeyDown={(e) => restrictLetterInput(e)} />
+        <input className='roi-calculator__hours' type='text' defaultValue={hoursValue} placeholder='00' onChange={(e) => setHoursValue(e.target.value)} onKeyDown={(e) => restrictLetterInput(e)} />
         <span className='colon'>:</span>
         <input className='roi-calculator__minutes' type='text' defaultValue={minutesValue} placeholder='00' onChange={(e) => setMinutesValue(e.target.value)} onKeyDown={(e) => restrictLetterInput(e)} />
         {/* <span className='si-unit'>hr</span> */}

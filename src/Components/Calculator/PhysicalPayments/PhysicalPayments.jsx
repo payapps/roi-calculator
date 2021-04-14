@@ -17,7 +17,7 @@ const PhysicalPayments = ({ setNumOfPages, setArchivalCost, isTierSelected, rest
   const overlay = hasPhysicalPayments.value ? null : <div className='overlay'></div>
 
   return (
-    <div className="roi-calculator__physical-payments">
+    <div className="roi-calculator__physical-payments" data-testid='roi-physical-payments'>
       <div className='row'>
         {isTierSelected ? null : <div className='overlay'></div>}
         <div className='text' title='Do you mail physical payment schedules?'>

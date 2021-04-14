@@ -4,7 +4,7 @@ const ClaimsNumber = ({ setNumOfClaims, isTierSelected, restrictLetterInput }) =
   const overlay = !isTierSelected ? <div className='overlay'></div> : null
   
   return (
-    <div className='row'>
+    <div className='row' data-testid='roi-claims-number'>
       {overlay}
       <div className='text' title='Claims processed per month?'>
         Claims processed per month?

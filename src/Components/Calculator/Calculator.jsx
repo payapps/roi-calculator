@@ -26,7 +26,7 @@ const Calculator = ({ isUnitedKingdom }) => {
   const totalPerClaimCost = hourRate * assessmentTime
   const physicalCosts = hasPhysicalPayments.value ? ((numOfPages * 0.05 * 12) + (archivalCost * 12)) : 0
   const totalAnnualCostToProcessClaims = (totalPerClaimCost * numOfClaims * 12) + physicalCosts
-  const moneySavedAnnually = totalAnnualCostToProcessClaims - payappsTotalAnnualCostToProcessClaims
+  const moneySavedAnnually = totalAnnualCostToProcessClaims - payappsTotalAnnualCostToProcessClaims - turnover.value
 
   //Calculate Time Savings
   const timeSaved = (numOfClaims * assessmentTime) - (numOfClaims * payappsProcessingTime)
@@ -51,7 +51,7 @@ const Calculator = ({ isUnitedKingdom }) => {
   }
 
   return (
-    <section className='roi-calculator'>
+    <section className='roi-calculator' data-testid='roi-calculator'>
       <Turnover setTurnover={setTurnover} isUnitedKingdom={isUnitedKingdom} />
 
       <ClaimsNumber setNumOfClaims={setNumOfClaims} isTierSelected={isTierSelected} restrictLetterInput={restrictLetterInput} />
