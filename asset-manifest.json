@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/roi-calculator/static/css/main.c90b7dbe.chunk.css",
+    "main.css": "/roi-calculator/static/css/main.352af09f.chunk.css",
     "main.js": "/roi-calculator/static/js/main.062e7a63.chunk.js",
     "main.js.map": "/roi-calculator/static/js/main.062e7a63.chunk.js.map",
     "runtime-main.js": "/roi-calculator/static/js/runtime-main.a8feae56.js",
@@ -12,7 +12,7 @@
     "static/js/3.5f156b31.chunk.js.map": "/roi-calculator/static/js/3.5f156b31.chunk.js.map",
     "index.html": "/roi-calculator/index.html",
     "static/css/2.deaf32b8.chunk.css.map": "/roi-calculator/static/css/2.deaf32b8.chunk.css.map",
-    "static/css/main.c90b7dbe.chunk.css.map": "/roi-calculator/static/css/main.c90b7dbe.chunk.css.map",
+    "static/css/main.352af09f.chunk.css.map": "/roi-calculator/static/css/main.352af09f.chunk.css.map",
     "static/js/2.49672a4d.chunk.js.LICENSE.txt": "/roi-calculator/static/js/2.49672a4d.chunk.js.LICENSE.txt",
     "static/media/index.css": "/roi-calculator/static/media/roboto-latin-900italic.cb5ad999.woff2"
   },
@@ -20,7 +20,7 @@
     "static/js/runtime-main.a8feae56.js",
     "static/css/2.deaf32b8.chunk.css",
     "static/js/2.49672a4d.chunk.js",
-    "static/css/main.c90b7dbe.chunk.css",
+    "static/css/main.352af09f.chunk.css",
     "static/js/main.062e7a63.chunk.js"
   ]
 }
