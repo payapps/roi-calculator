@@ -19,8 +19,9 @@ const Calculator = ({ isUnitedKingdom }) => {
   const checkZeroInputValues = numOfClaims < 1 || assessmentTime < 0.01 || hourRate < 0.01 || numOfClaims === '' || assessmentTime === '' || hourRate === ''
 
   //Payapps Defaults
-  const payappsProcessingTime = 45 / 60 //45 minutes
-  const payappsDefaultRate = isUnitedKingdom ? 28 : 75 //dollars per hour
+  const defaultPayappsProcessTime = 45 / 60 //45 mins
+  const payappsProcessingTime = assessmentTime < 1.5 ? assessmentTime / 2 : defaultPayappsProcessTime //if input value is less than 1.5 hrs then use half the assessment time entered by user
+  const payappsDefaultRate = isUnitedKingdom ? 28 : 75 //pounds or dollars per hour
   const payappsTotalPerClaimCost = payappsDefaultRate * payappsProcessingTime
   const payappsTotalAnnualCostToProcessClaims = payappsTotalPerClaimCost * numOfClaims * 12
 

@@ -5,6 +5,10 @@ const Results = ({ moneySavedAnnually, timeSaved, returnOnInvestment, isUnitedKi
 
   const formattedMoneySavedAnnually = moneySavedAnnually.toLocaleString("en-AU", { maximumFractionDigits: 2, minimumFractionDigits: 2 })
 
+  console.log(moneySavedAnnually)
+
+  const investmentReturn = (returnOnInvestment < 0) || (moneySavedAnnually === 0) ? 0 : returnOnInvestment
+
   return (
     <section className='roi-calculator__results' data-testid='roi-results'>
       <div className='roi-calculator__results__return-on-investment'>
@@ -12,7 +16,7 @@ const Results = ({ moneySavedAnnually, timeSaved, returnOnInvestment, isUnitedKi
         <div className="roi-calculator__results__result-container">
           {overlay}
           <p>
-            <span className='roi-calculator__results__number'>{returnOnInvestment.toFixed(1)}</span>
+            <span className='roi-calculator__results__number'>{investmentReturn.toFixed(1)}</span>
             <span className='roi-calculator__results__units'> months</span>
           </p>
         </div>
