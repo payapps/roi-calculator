@@ -9,13 +9,13 @@ test('renders Header without crashing', () => {
   expect(getByTestId('roi-heading')).toBeInTheDocument()
 })
 
-test('render R.O.I Calculator heading', () => {
+test('render Savings Calculator heading', () => {
   render(<Header />)
-  const headingText = screen.getByText(/R.O.I. CALCULATOR/i)
+  const headingText = screen.getByText(/SAVINGS CALCULATOR/i)
   expect(headingText).toBeInTheDocument()
 })
 
-test('render R.O.I Calculator description', () => {
+test('render Savings Calculator description', () => {
   render(<Header />)
   const descriptionText = screen.getByText(/See how much time and money you could be saving with Payapps./i)
   expect(descriptionText).toBeInTheDocument()
