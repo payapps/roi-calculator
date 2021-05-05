@@ -22,12 +22,6 @@ test('render correctly formatted string value of the potential financial savings
   expect(moneySaved).toBeInTheDocument()
 })
 
-test('render correctly formatted string value of the return on investment to decimal places', () => {
-  render(ResultsComponent)
-  const investmentReturn = screen.getByText(/5.0/i)
-  expect(investmentReturn).toBeInTheDocument()
-})
-
 test('render correctly formatted string value of the rounded to the next hour', () => {
   render(ResultsComponent)
   const moneySaved = screen.getByText(/346/i)

@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react'
 
-const AssessmentTime = ({ setAssessmentTime, isTierSelected, restrictLetterInput }) => {
+const AssessmentTime = ({ setAssessmentTime, restrictLetterInput }) => {
   const [hoursValue, setHoursValue] = useState('02')
   const [minutesValue, setMinutesValue] = useState('00')
   const minutesInteger = Number(minutesValue)
   const hoursInteger = Number(hoursValue)
-  const overlay = !isTierSelected ? <div className='overlay'></div> : null
 
   const calcAssessmentTime = () => {
     setAssessmentTime(hoursInteger + (minutesInteger / 60))
@@ -17,7 +16,6 @@ const AssessmentTime = ({ setAssessmentTime, isTierSelected, restrictLetterInput
 
   return (
     <div className='row' data-testid='roi-assessment-time'>
-      {overlay}
       <div className='text' title='Total time to assess a claim?'>
         Total time to assess a claim?
       </div>

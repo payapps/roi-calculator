@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Select from 'react-select'
 import { customStyles } from '../../../Styles/dropdownStyles'
 
-const PhysicalPayments = ({ setNumOfPages, setArchivalCost, isTierSelected, restrictLetterInput, hasPhysicalPayments, setPhysicalPayments }) => {
+const PhysicalPayments = ({ setNumOfPages, setArchivalCost, restrictLetterInput, hasPhysicalPayments, setPhysicalPayments }) => {
   const options = [
     {
       label: 'no',
@@ -19,7 +19,6 @@ const PhysicalPayments = ({ setNumOfPages, setArchivalCost, isTierSelected, rest
   return (
     <div className="roi-calculator__physical-payments" data-testid='roi-physical-payments'>
       <div className='row'>
-        {isTierSelected ? null : <div className='overlay'></div>}
         <div className='text' title='Do you mail physical payment schedules?'>
           Do you mail physical payment schedules?
         </div>

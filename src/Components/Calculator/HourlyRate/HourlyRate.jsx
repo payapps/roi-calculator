@@ -1,11 +1,9 @@
 import React from 'react'
 
-const HourlyRate = ({ setHourlyRate, isTierSelected, isUnitedKingdom, restrictLetterInput }) => {
-  const overlay = !isTierSelected ? <div className='overlay'></div> : null
+const HourlyRate = ({ setHourlyRate, isUnitedKingdom, restrictLetterInput }) => {
 
   return (
     <div className='row' data-testid='roi-hourly-rate'>
-      {overlay}
       <div className='text' title='Average Contract Administrator hourly wage (f you’re unsure, use 75)'>
         Average Contract Administrator hourly wage <span className='small-text'>(if you’re unsure, use {isUnitedKingdom ? '£28' : '$75'} per hour)</span>
       </div>

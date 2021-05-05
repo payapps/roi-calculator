@@ -1,11 +1,9 @@
 import React from 'react'
 
-const ClaimsNumber = ({ setNumOfClaims, isTierSelected, restrictLetterInput }) => {
-  const overlay = !isTierSelected ? <div className='overlay'></div> : null
+const ClaimsNumber = ({ setNumOfClaims, restrictLetterInput }) => {
   
   return (
     <div className='row' data-testid='roi-claims-number'>
-      {overlay}
       <div className='text' title='Claims processed per month?'>
         Claims processed per month?
           </div>

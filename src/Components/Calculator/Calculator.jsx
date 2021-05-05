@@ -7,14 +7,12 @@ import PhysicalPayments from './PhysicalPayments/PhysicalPayments'
 import Results from './Results/Results'
 
 const Calculator = ({ isUnitedKingdom }) => {
-  const [turnover, setTurnover] = useState({ label: 'none', value: 0 })
   const [numOfClaims, setNumOfClaims] = useState(200)
   const [assessmentTime, setAssessmentTime] = useState(2)
   const [hourRate, setHourlyRate] = useState(isUnitedKingdom ? 28 : 75)
   const [numOfPages, setNumOfPages] = useState(0)
   const [hasPhysicalPayments, setPhysicalPayments] = useState(false)
   const [archivalCost, setArchivalCost] = useState(0)
-  const isTierSelected = turnover.value !== 0
 
   const checkZeroInputValues = numOfClaims < 1 || assessmentTime < 0.01 || hourRate < 0.01 || numOfClaims === '' || assessmentTime === '' || hourRate === ''
 
@@ -29,13 +27,10 @@ const Calculator = ({ isUnitedKingdom }) => {
   const totalPerClaimCost = hourRate * assessmentTime
   const physicalCosts = hasPhysicalPayments.value ? ((numOfPages * 0.05 * 12) + (archivalCost * 12)) : 0
   const totalAnnualCostToProcessClaims = (totalPerClaimCost * numOfClaims * 12) + physicalCosts
-  const moneySavedAnnually = checkZeroInputValues ? 0 : totalAnnualCostToProcessClaims - payappsTotalAnnualCostToProcessClaims - turnover.value
+  const moneySavedAnnually = checkZeroInputValues ? 0 : totalAnnualCostToProcessClaims - payappsTotalAnnualCostToProcessClaims
 
   //Calculate Time Savings
   const timeSaved = checkZeroInputValues ? 0 : (numOfClaims * assessmentTime) - (numOfClaims * payappsProcessingTime)
-
-  //Calculate Return On Investment
-  const returnOnInvestment = checkZeroInputValues ? 0 : turnover.value / (moneySavedAnnually / 12)
 
   //restrict letters and characters
   const restrictLetterInput = (e) => {
@@ -55,17 +50,17 @@ const Calculator = ({ isUnitedKingdom }) => {
 
   return (
     <section className='roi-calculator' data-testid='roi-calculator'>
-      <Turnover setTurnover={setTurnover} isUnitedKingdom={isUnitedKingdom} />
+      {/* <Turnover setTurnover={setTurnover} isUnitedKingdom={isUnitedKingdom} /> */}
 
-      <ClaimsNumber setNumOfClaims={setNumOfClaims} isTierSelected={isTierSelected} restrictLetterInput={restrictLetterInput} />
+      <ClaimsNumber setNumOfClaims={setNumOfClaims} restrictLetterInput={restrictLetterInput} />
 
-      <AssessmentTime setAssessmentTime={setAssessmentTime} isTierSelected={isTierSelected} restrictLetterInput={restrictLetterInput} />
+      <AssessmentTime setAssessmentTime={setAssessmentTime} restrictLetterInput={restrictLetterInput} />
 
-      <HourlyRate setHourlyRate={setHourlyRate} isTierSelected={isTierSelected} isUnitedKingdom={isUnitedKingdom} restrictLetterInput={restrictLetterInput} />
+      <HourlyRate setHourlyRate={setHourlyRate} isUnitedKingdom={isUnitedKingdom} restrictLetterInput={restrictLetterInput} />
 
-      {isUnitedKingdom ? null : <PhysicalPayments setNumOfPages={setNumOfPages} setArchivalCost={setArchivalCost} isTierSelected={isTierSelected} restrictLetterInput={restrictLetterInput} hasPhysicalPayments={hasPhysicalPayments} setPhysicalPayments={setPhysicalPayments} />}
+      {isUnitedKingdom ? null : <PhysicalPayments setNumOfPages={setNumOfPages} setArchivalCost={setArchivalCost} restrictLetterInput={restrictLetterInput} hasPhysicalPayments={hasPhysicalPayments} setPhysicalPayments={setPhysicalPayments} />}
 
-      <Results moneySavedAnnually={moneySavedAnnually} timeSaved={timeSaved} returnOnInvestment={returnOnInvestment} isUnitedKingdom={isUnitedKingdom} isTierSelected={isTierSelected} />
+      <Results moneySavedAnnually={moneySavedAnnually} timeSaved={timeSaved} isUnitedKingdom={isUnitedKingdom} />
 
     </section>
   )
