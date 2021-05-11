@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Turnover from './Turnover/Turnover'
 import ClaimsNumber from './ClaimsNumber/ClaimsNumber'
 import AssessmentTime from './AssessmentTime/AssessmentTime'
 import HourlyRate from './HourlyRate/HourlyRate'
