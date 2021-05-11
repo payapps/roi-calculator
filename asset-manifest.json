@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/roi-calculator/static/css/main.f5a51cd9.chunk.css",
-    "main.js": "/roi-calculator/static/js/main.14402a4d.chunk.js",
-    "main.js.map": "/roi-calculator/static/js/main.14402a4d.chunk.js.map",
+    "main.js": "/roi-calculator/static/js/main.070e253c.chunk.js",
+    "main.js.map": "/roi-calculator/static/js/main.070e253c.chunk.js.map",
     "runtime-main.js": "/roi-calculator/static/js/runtime-main.a8feae56.js",
     "runtime-main.js.map": "/roi-calculator/static/js/runtime-main.a8feae56.js.map",
     "static/css/2.deaf32b8.chunk.css": "/roi-calculator/static/css/2.deaf32b8.chunk.css",
-    "static/js/2.b96d2f0e.chunk.js": "/roi-calculator/static/js/2.b96d2f0e.chunk.js",
-    "static/js/2.b96d2f0e.chunk.js.map": "/roi-calculator/static/js/2.b96d2f0e.chunk.js.map",
+    "static/js/2.fd4dfa40.chunk.js": "/roi-calculator/static/js/2.fd4dfa40.chunk.js",
+    "static/js/2.fd4dfa40.chunk.js.map": "/roi-calculator/static/js/2.fd4dfa40.chunk.js.map",
     "static/js/3.5f156b31.chunk.js": "/roi-calculator/static/js/3.5f156b31.chunk.js",
     "static/js/3.5f156b31.chunk.js.map": "/roi-calculator/static/js/3.5f156b31.chunk.js.map",
     "index.html": "/roi-calculator/index.html",
     "static/css/2.deaf32b8.chunk.css.map": "/roi-calculator/static/css/2.deaf32b8.chunk.css.map",
     "static/css/main.f5a51cd9.chunk.css.map": "/roi-calculator/static/css/main.f5a51cd9.chunk.css.map",
-    "static/js/2.b96d2f0e.chunk.js.LICENSE.txt": "/roi-calculator/static/js/2.b96d2f0e.chunk.js.LICENSE.txt",
+    "static/js/2.fd4dfa40.chunk.js.LICENSE.txt": "/roi-calculator/static/js/2.fd4dfa40.chunk.js.LICENSE.txt",
     "static/media/index.css": "/roi-calculator/static/media/roboto-latin-900italic.cb5ad999.woff2"
   },
   "entrypoints": [
     "static/js/runtime-main.a8feae56.js",
     "static/css/2.deaf32b8.chunk.css",
-    "static/js/2.b96d2f0e.chunk.js",
+    "static/js/2.fd4dfa40.chunk.js",
     "static/css/main.f5a51cd9.chunk.css",
-    "static/js/main.14402a4d.chunk.js"
+    "static/js/main.070e253c.chunk.js"
   ]
 }
