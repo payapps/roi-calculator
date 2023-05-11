@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-const AssessmentTime = ({ setAssessmentTime, restrictLetterInput }) => {
+const AssessmentTime = ({ setAssessmentTime, restrictLetterInput, text }) => {
   const [hoursValue, setHoursValue] = useState('02')
   const [minutesValue, setMinutesValue] = useState('00')
   const minutesInteger = Number(minutesValue)
@@ -16,8 +16,8 @@ const AssessmentTime = ({ setAssessmentTime, restrictLetterInput }) => {
 
   return (
     <div className='row' data-testid='roi-assessment-time'>
-      <div className='text' title='Total time to assess a claim?'>
-        Total time to assess a claim?
+      <div className='text' title={text}>
+        {text}
       </div>
       <div className='col1 roi-calculator__time-wrapper'>
         <input className='roi-calculator__hours' type='text' defaultValue={hoursValue} placeholder='00' onChange={(e) => setHoursValue(e.target.value)} onKeyDown={(e) => restrictLetterInput(e)} maxLength='2' />

@@ -47,15 +47,25 @@ const Calculator = ({ isUnitedKingdom }) => {
     }
   }
 
+  const texts = isUnitedKingdom ? {
+    claimsNumber: 'Applications processed per month?',
+    assessmentTime: 'Total time to assess an application?',
+    hourlyRate: 'Average Quantity Surveyors hourly wage?'
+  } : {
+    claimsNumber: 'Claims processed per month?',
+    assessmentTime: 'Total time to assess a claim?',
+    hourlyRate: 'Average Contract Administrator hourly wage (f you’re unsure, use 75)'
+  };
+
   return (
     <section className='roi-calculator' data-testid='roi-calculator'>
       {/* <Turnover setTurnover={setTurnover} isUnitedKingdom={isUnitedKingdom} /> */}
 
-      <ClaimsNumber setNumOfClaims={setNumOfClaims} restrictLetterInput={restrictLetterInput} />
+      <ClaimsNumber setNumOfClaims={setNumOfClaims} restrictLetterInput={restrictLetterInput} text={texts.claimsNumber} />
 
-      <AssessmentTime setAssessmentTime={setAssessmentTime} restrictLetterInput={restrictLetterInput} />
+      <AssessmentTime setAssessmentTime={setAssessmentTime} restrictLetterInput={restrictLetterInput} text={texts.assessmentTime} />
 
-      <HourlyRate setHourlyRate={setHourlyRate} isUnitedKingdom={isUnitedKingdom} restrictLetterInput={restrictLetterInput} />
+      <HourlyRate setHourlyRate={setHourlyRate} isUnitedKingdom={isUnitedKingdom} restrictLetterInput={restrictLetterInput} text={texts.hourlyRate} />
 
       {isUnitedKingdom ? null : <PhysicalPayments setNumOfPages={setNumOfPages} setArchivalCost={setArchivalCost} restrictLetterInput={restrictLetterInput} hasPhysicalPayments={hasPhysicalPayments} setPhysicalPayments={setPhysicalPayments} />}
 

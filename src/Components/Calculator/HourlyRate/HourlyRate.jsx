@@ -1,11 +1,11 @@
 import React from 'react'
 
-const HourlyRate = ({ setHourlyRate, isUnitedKingdom, restrictLetterInput }) => {
+const HourlyRate = ({ setHourlyRate, isUnitedKingdom, restrictLetterInput, text }) => {
 
   return (
     <div className='row' data-testid='roi-hourly-rate'>
-      <div className='text' title='Average Contract Administrator hourly wage (f you’re unsure, use 75)'>
-        Average Contract Administrator hourly wage <span className='small-text'>(if you’re unsure, use {isUnitedKingdom ? '£28' : '$75'} per hour)</span>
+      <div className='text' title={text}>
+        {text}
       </div>
       <div className='col1 roi-calculator__wage-input-wrapper'>
         <span className='roi-calculator__wage-currency'>{isUnitedKingdom ? '£' : '$'}</span>
